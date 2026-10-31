@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Móveis Siqueira | Marcenaria Própria</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wood: {
+                            deep: '#1a0907',
+                            base: '#2d100d', 
+                            light: '#4a1c15'
+                        },
+                        silver: {
+                            light: '#ffffff',
+                            DEFAULT: '#e0e0e0',
+                            dark: '#b0b0b0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ocultar elementos para o filtro do catálogo */
+        .hide-item {
+            display: none !important;
+        }
+        
+        /* Estilo elegante para a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0907; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a1c15; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0b0b0; 
+        }
+    </style>
+</head>
+<body class="bg-wood-deep text-silver font-sans antialiased selection:bg-silver selection:text-wood-deep">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
+            <a href="#" class="block">
+                <img src="logo.png" alt="Móveis Siqueira" class="h-16 w-auto object-contain" onerror="this.outerHTML='<h1 class=\'text-2xl font-serif text-silver-light\'>Móveis Siqueira</h1>'">
+            </a>
+            <a href="tel:+5511999999999" class="flex items-center gap-2 border border-silver-dark/50 text-silver hover:border-silver-light hover:text-silver-light px-5 py-2 rounded-full transition-all duration-300 text-sm font-medium tracking-wide backdrop-blur-sm bg-wood-deep/30">
+                <i class="fa-solid fa-phone text-xs"></i> Ligar
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b46a0eb?q=80&w=2000&auto=format&fit=crop" alt="Ambiente sofisticado de marcenaria" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-wood-deep/95 via-wood-deep/80 to-wood-deep/50"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
+            <div class="max-w-2xl">
+                <p class="text-xs md:text-sm uppercase tracking-[0.25em] font-medium mb-6 text-silver-dark">
+                    Marcenaria Própria desde 2004
+                </p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-6 text-silver-light">
+                    Móveis feitos à mão, <span class="italic text-silver-dark">do nosso galpão</span> para a sua casa.
+                </h1>
+                <p class="text-lg md:text-xl font-light text-silver mb-12 max-w-lg leading-relaxed">
+                    Madeira maciça, acabamento artesanal e medidas sob encomenda.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#orcamento" class="bg-silver text-wood-deep px-8 py-4 rounded-sm text-center font-medium hover:bg-silver-light transition-colors flex items-center justify-center gap-3 tracking-wide">
+                        Pedir orçamento <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#catalogo" class="border border-silver-dark text-silver px-8 py-4 rounded-sm text-center font-medium hover:border-silver-light hover:text-silver-light transition-all backdrop-blur-sm tracking-wide">
+                        Ver catálogo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="py-16 bg-wood-base border-y border-silver-dark/10 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-silver-dark/20">
+                
+                <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6 first:pl-0">
+                    <i class="fa-solid fa-hammer text-2xl text-silver mb-4"></i>
+                    <h3 class="font-serif text-xl text-silver-light mb-1">Fabricação própria</h3>
+                    <p class="text-silver-dark font-light text-sm">Sem intermediários</p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6">
+                    <i class="fa-solid fa-ruler-combined text-2xl text-silver mb-4"></i>
+                    <h3 class="font-serif text-xl text-silver-light mb-1">Sob medida</h3>
+                    <p class="text-silver-dark font-light text-sm">Do seu jeito e tamanho</p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6">
+                    <i class="fa-solid fa-truck text-2xl text-silver mb-4"></i>
+                    <h3 class="font-serif text-xl text-silver-light mb-1">Entrega e montagem</h3>
+                    <p class="text-silver-dark font-light text-sm">Inclusas na região</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa Oficina -->
+    <section class="py-24 md:py-32 bg-wood-deep relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-20">
+                <p class="text-silver-dark text-xs uppercase tracking-[0.25em] font-medium mb-4">Nossa Oficina</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 leading-tight text-silver-light">
+                    Cada peça passa pelas mãos de quem <span class="italic text-silver-dark">sabe o que faz.</span>
+                </h2>
+                <p class="text-lg text-silver/80 font-light leading-relaxed">
+                    Escolhemos a madeira, cortamos, encaixamos e damos o acabamento aqui mesmo. Por isso conseguimos ajustar medidas, cores e tecidos para o seu ambiente.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-silver-dark/10">
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">20+</p>
+                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">anos</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">3.000</p>
+                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">móveis entregues</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">5 anos</p>
+                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">de garantia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo (Vitrine) -->
+    <section id="catalogo" class="py-24 bg-wood-base">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-silver-light mb-8">Peças da nossa oficina</h2>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button data-filter="all" class="filter-btn px-6 py-2 rounded-full border border-silver text-wood-deep bg-silver font-medium text-sm transition-all tracking-wide">Todos</button>
+                    <button data-filter="sala" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver bg-transparent hover:border-silver hover:text-silver-light text-sm transition-all tracking-wide">Sala</button>
+                    <button data-filter="jantar" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver bg-transparent hover:border-silver hover:text-silver-light text-sm transition-all tracking-wide">Jantar</button>
+                    <button data-filter="quarto" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver bg-transparent hover:border-silver hover:text-silver-light text-sm transition-all tracking-wide">Quarto</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16" id="catalog-grid">
+                
+                <!-- Item 1 -->
+                <div class="product-card group" data-category="sala">
+                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-wood-deep">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Sofá Ipê" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-2xl font-serif text-silver-light">Sofá Ipê</h3>
+                    </div>
+                    <p class="text-silver-dark font-light text-sm mb-6">Carvalho maciço · 210 x 90 cm</p>
+                    <button onclick="preencherMovel('Sofá Ipê')" class="w-full border border-silver-dark text-silver px-4 py-3 text-sm tracking-widest uppercase hover:bg-silver hover:text-wood-deep transition-all duration-300">
+                        Orçamento
+                    </button>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card group" data-category="jantar">
+                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-wood-deep">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop" alt="Mesa Jatobá" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-2xl font-serif text-silver-light">Mesa Jatobá</h3>
+                    </div>
+                    <p class="text-silver-dark font-light text-sm mb-6">Carvalho maciço · 180 x 95 cm</p>
+                    <button onclick="preencherMovel('Mesa Jatobá')" class="w-full border border-silver-dark text-silver px-4 py-3 text-sm tracking-widest uppercase hover:bg-silver hover:text-wood-deep transition-all duration-300">
+                        Orçamento
+                    </button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card group" data-category="sala">
+                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-wood-deep">
+                        <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?q=80&w=1000&auto=format&fit=crop" alt="Poltrona Aroeira" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-2xl font-serif text-silver-light">Poltrona Aroeira</h3>
+                    </div>
+                    <p class="text-silver-dark font-light text-sm mb-6">Nogueira + linho · 72 x 80 cm</p>
+                    <button onclick="preencherMovel('Poltrona Aroeira')" class="w-full border border-silver-dark text-silver px-4 py-3 text-sm tracking-widest uppercase hover:bg-silver hover:text-wood-deep transition-all duration-300">
+                        Orçamento
+                    </button>
+                </div>
+                
+                <!-- Item 4 (Quarto Exemplo) -->
+                <div class="product-card group" data-category="quarto">
+                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-wood-deep">
+                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000&auto=format&fit=crop" alt="Cama Cedro" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-2xl font-serif text-silver-light">Cama Cedro</h3>
+                    </div>
+                    <p class="text-silver-dark font-light text-sm mb-6">Cerejeira maciça · Casal Padrão</p>
+                    <button onclick="preencherMovel('Cama Cedro')" class="w-full border border-silver-dark text-silver px-4 py-3 text-sm tracking-widest uppercase hover:bg-silver hover:text-wood-deep transition-all duration-300">
+                        Orçamento
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Orçamento -->
+    <section id="orcamento" class="py-24 bg-wood-deep">
+        <div class="max-w-4xl mx-auto px-6 md:px-8">
+            
+            <div class="text-center mb-16">
+                <p class="text-silver-dark text-xs uppercase tracking-[0.25em] font-medium mb-4">Orçamento sem compromisso</p>
+                <h2 class="text-4xl md:text-5xl font-serif text-silver-light mb-6">Conte o que você imagina.</h2>
+                <p class="text-silver/80 font-light text-lg">
+                    Preencha os dados e sua mensagem chega pronta no nosso WhatsApp. Respondemos em até 1 dia útil.
+                </p>
+            </div>
+
+            <div class="bg-wood-base p-8 md:p-12 border border-silver-dark/20 shadow-2xl">
+                <form id="formWhatsapp" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label for="nome" class="block text-xs uppercase tracking-widest text-silver-dark mb-2">Seu nome</label>
+                            <input type="text" id="nome" required placeholder="Ex: Maria Silva" class="w-full bg-transparent border-b border-silver-dark/50 text-silver-light placeholder-silver-dark/50 py-3 focus:outline-none focus:border-silver transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="movel" class="block text-xs uppercase tracking-widest text-silver-dark mb-2">Qual móvel?</label>
+                            <input type="text" id="movel" required placeholder="Ex: mesa de jantar para 8 pessoas" class="w-full bg-transparent border-b border-silver-dark/50 text-silver-light placeholder-silver-dark/50 py-3 focus:outline-none focus:border-silver transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="medidas" class="block text-xs uppercase tracking-widest text-silver-dark mb-2">Medidas aproximadas</label>
+                        <input type="text" id="medidas" placeholder="Ex: 2,20 x 1,00 m" class="w-full bg-transparent border-b border-silver-dark/50 text-silver-light placeholder-silver-dark/50 py-3 focus:outline-none focus:border-silver transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="detalhes" class="block text-xs uppercase tracking-widest text-silver-dark mb-2">Detalhes</label>
+                        <textarea id="detalhes" rows="3" placeholder="Madeira, cor, tecido, prazo..." class="w-full bg-transparent border-b border-silver-dark/50 text-silver-light placeholder-silver-dark/50 py-3 focus:outline-none focus:border-silver transition-colors resize-none"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-silver text-wood-deep py-4 font-medium tracking-widest uppercase text-sm hover:bg-silver-light transition-all flex justify-center items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Enviar pelo WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-wood-deep text-silver-dark py-12 border-t border-silver-dark/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-sm font-light">© 2026 Móveis Siqueira · Móveis de fabricação própria</p>
+            </div>
+            
+            <a href="#" class="flex items-center gap-2 text-silver-dark hover:text-silver-light transition-colors text-sm tracking-wide">
+                <i class="fa-brands fa-instagram text-lg"></i>
+                @moveissiqueira
+            </a>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Efeito do Header no Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-wood-deep/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-silver-dark/10');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-wood-deep/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-silver-dark/10', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Lógica de Filtros do Catálogo
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Resetar botões
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-silver', 'text-wood-deep', 'border-silver');
+                    btn.classList.add('bg-transparent', 'text-silver', 'border-silver-dark');
+                });
+
+                // Ativar botão clicado
+                button.classList.add('bg-silver', 'text-wood-deep', 'border-silver');
+                button.classList.remove('bg-transparent', 'text-silver', 'border-silver-dark');
+
+                const filterValue = button.getAttribute('data-category');
+
+                // Filtrar itens
+                productCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.classList.remove('hide-item');
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.classList.add('hide-item');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Preencher formulário e rolar a página
+        function preencherMovel(nomeMovel) {
+            const inputMovel = document.getElementById('movel');
+            inputMovel.value = nomeMovel;
+            
+            document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                inputMovel.focus();
+                inputMovel.classList.add('border-silver-light');
+                setTimeout(() => inputMovel.classList.remove('border-silver-light'), 1000);
+            }, 800);
+        }
+
+        // Submissão do Formulário para WhatsApp
+        document.getElementById('formWhatsapp').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const nome = document.getElementById('nome').value.trim();
+            const movel = document.getElementById('movel').value.trim();
+            const medidas = document.getElementById('medidas').value.trim() || 'Não informadas';
+            const detalhes = document.getElementById('detalhes').value.trim() || 'Sem detalhes adicionais';
+
+            const textoMensagem = `Olá, Móveis Siqueira! Meu nome é *${nome}*.\n\nGostaria de um orçamento para a seguinte peça:\n*${movel}*\n\n*Medidas:* ${medidas}\n*Detalhes adicionais:* ${detalhes}`;
+            
+            const numeroTelefone = '5511999999999';
+            const linkWhatsapp = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(textoMensagem)}`;
+            
+            window.open(linkWhatsapp, '_blank');
+        });
+    </script>
+</body>
+</html>
