@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -24,19 +23,15 @@
             theme: {
                 extend: {
                     colors: {
-                        fendi: {
-                            deep: '#423630', // Café suave / Fendi escuro para fundos principais
-                            base: '#594a42', // Tom médio para bordas e detalhes
-                        },
-                        sand: {
-                            light: '#faf8f5', // Bege super claro para seções de contraste
-                            DEFAULT: '#f0ece6', // Bege/Areia suave
-                            dark: '#d6cec4' // Areia um pouco mais escuro para bordas/textos
+                        coffee: {
+                            dark: '#2a1b15', // Fundo principal
+                            light: '#3b261d', // Fundo de inputs e cards
+                            border: '#5c3d2e' // Bordas suaves
                         },
                         silver: {
-                            light: '#ffffff',
-                            DEFAULT: '#e0e0e0',
-                            dark: '#a39b98' // Prata aquecido para harmonizar com os tons terrosos
+                            light: '#f3f4f6', // Textos principais
+                            DEFAULT: '#d1d5db', // Textos secundários
+                            dark: '#9ca3af' // Placeholders e detalhes
                         }
                     },
                     fontFamily: {
@@ -48,36 +43,35 @@
         }
     </script>
     <style>
-        /* Ocultar elementos para o filtro do catálogo */
         .hide-item {
             display: none !important;
         }
         
-        /* Estilo elegante para a barra de rolagem */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #423630; 
+            background: #2a1b15; 
         }
         ::-webkit-scrollbar-thumb {
-            background: #d6cec4; 
+            background: #5c3d2e; 
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #f0ece6; 
+            background: #9ca3af; 
         }
     </style>
 </head>
-<body class="bg-fendi-deep text-sand-light font-sans antialiased selection:bg-sand-DEFAULT selection:text-fendi-deep">
+<body class="bg-coffee-dark text-silver-light font-sans antialiased">
 
     <!-- Header -->
-    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent">
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-coffee-dark/90 backdrop-blur-sm border-b border-coffee-border">
         <div class="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
             <a href="#" class="block">
-                <img src="logo.png" alt="Móveis Siqueira" class="h-16 w-auto object-contain" onerror="this.outerHTML='<h1 class=\'text-2xl font-serif text-silver-light\'>Móveis Siqueira</h1>'">
+                <img src="logo.png" alt="Móveis Siqueira" class="h-14 w-auto object-contain" onerror="this.outerHTML='<h1 class=\'text-2xl font-serif text-silver-light\'>Móveis Siqueira</h1>'">
             </a>
-            <a href="tel:+5511999999999" class="flex items-center gap-2 border border-silver-dark/50 text-sand-light hover:border-silver-light hover:text-silver-light px-5 py-2 rounded-full transition-all duration-300 text-sm font-medium tracking-wide backdrop-blur-sm bg-fendi-deep/30">
+            <a href="tel:+5511999999999" class="flex items-center gap-2 border border-silver-dark text-silver-light hover:bg-silver-light hover:text-coffee-dark px-5 py-2 rounded-full transition-all duration-300 text-sm font-medium tracking-wide">
                 <i class="fa-solid fa-phone text-xs"></i> Ligar
             </a>
         </div>
@@ -87,229 +81,173 @@
     <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0">
-            <!-- Imagem de fundo apontando para fundo.jpg -->
             <img src="fundo.jpg" alt="Ambiente sofisticado de marcenaria" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1618220179428-22790b46a0eb?q=80&w=2000&auto=format&fit=crop'">
-            <div class="absolute inset-0 bg-gradient-to-r from-fendi-deep/95 via-fendi-deep/80 to-fendi-deep/40"></div>
+            <div class="absolute inset-0 bg-coffee-dark/80"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
             <div class="max-w-2xl">
-                <p class="text-xs md:text-sm uppercase tracking-[0.25em] font-medium mb-6 text-silver-dark">
+                <p class="text-xs md:text-sm uppercase tracking-[0.25em] font-medium mb-6 text-silver-DEFAULT">
                     Marcenaria Própria desde 2004
                 </p>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-6 text-silver-light">
-                    Móveis feitos à mão, <span class="italic text-sand-dark">do nosso galpão</span> para a sua casa.
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-6 text-white">
+                    Móveis feitos à mão, <span class="italic text-silver-DEFAULT">do nosso galpão</span> para a sua casa.
                 </h1>
-                <p class="text-lg md:text-xl font-light text-sand-light mb-12 max-w-lg leading-relaxed">
+                <p class="text-lg md:text-xl font-light text-silver-DEFAULT mb-12 max-w-lg leading-relaxed">
                     Madeira maciça, acabamento artesanal e medidas sob encomenda.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="#orcamento" class="bg-sand-DEFAULT text-fendi-deep px-8 py-4 rounded-sm text-center font-medium hover:bg-sand-light transition-colors flex items-center justify-center gap-3 tracking-wide">
+                    <button onclick="document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' })" class="bg-silver-light text-coffee-dark px-8 py-4 rounded-sm text-center font-medium hover:bg-white transition-colors flex items-center justify-center gap-3 tracking-wide">
                         Pedir orçamento <i class="fa-solid fa-arrow-right text-sm"></i>
-                    </a>
-                    <a href="#catalogo" class="border border-silver-dark text-sand-light px-8 py-4 rounded-sm text-center font-medium hover:border-silver-light hover:text-silver-light transition-all backdrop-blur-sm tracking-wide">
+                    </button>
+                    <button onclick="document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' })" class="border border-silver-dark text-silver-light px-8 py-4 rounded-sm text-center font-medium hover:border-silver-light hover:bg-silver-light/10 transition-all backdrop-blur-sm tracking-wide">
                         Ver catálogo
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefícios -->
-    <section class="py-16 bg-sand-DEFAULT text-fendi-deep relative z-10">
+    <!-- Benefícios (Contrast Fix) -->
+    <section class="py-16 border-y border-coffee-border bg-coffee-dark relative z-10">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-fendi-deep/10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-coffee-border">
                 
                 <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6 first:pl-0">
-                    <i class="fa-solid fa-hammer text-2xl text-fendi-base mb-4"></i>
-                    <h3 class="font-serif text-xl text-fendi-deep mb-1">Fabricação própria</h3>
-                    <p class="text-fendi-deep/70 font-light text-sm">Sem intermediários</p>
+                    <i class="fa-solid fa-hammer text-3xl text-silver-light mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-1">Fabricação própria</h3>
+                    <p class="text-silver-dark font-light text-sm">Sem intermediários</p>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6">
-                    <i class="fa-solid fa-ruler-combined text-2xl text-fendi-base mb-4"></i>
-                    <h3 class="font-serif text-xl text-fendi-deep mb-1">Sob medida</h3>
-                    <p class="text-fendi-deep/70 font-light text-sm">Do seu jeito e tamanho</p>
+                    <i class="fa-solid fa-ruler-combined text-3xl text-silver-light mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-1">Sob medida</h3>
+                    <p class="text-silver-dark font-light text-sm">Do seu jeito e tamanho</p>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start text-center md:text-left pt-6 md:pt-0 md:px-6">
-                    <i class="fa-solid fa-truck text-2xl text-fendi-base mb-4"></i>
-                    <h3 class="font-serif text-xl text-fendi-deep mb-1">Entrega e montagem</h3>
-                    <p class="text-fendi-deep/70 font-light text-sm">Inclusas na região</p>
+                    <i class="fa-solid fa-truck text-3xl text-silver-light mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-1">Entrega e montagem</h3>
+                    <p class="text-silver-dark font-light text-sm">Inclusas na região</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Nossa Oficina -->
-    <section class="py-24 md:py-32 bg-fendi-deep relative">
+    <!-- Catálogo -->
+    <section id="catalogo" class="py-24 bg-coffee-dark">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-20">
-                <p class="text-silver-dark text-xs uppercase tracking-[0.25em] font-medium mb-4">Nossa Oficina</p>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 leading-tight text-silver-light">
-                    Cada peça passa pelas mãos de quem <span class="italic text-sand-dark">sabe o que faz.</span>
-                </h2>
-                <p class="text-lg text-sand-light/80 font-light leading-relaxed">
-                    Escolhemos a madeira, cortamos, encaixamos e damos o acabamento aqui mesmo. Por isso conseguimos ajustar medidas, cores e tecidos para o seu ambiente.
-                </p>
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-fendi-base/50">
-                <div class="text-center">
-                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">20+</p>
-                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">anos</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">3.000</p>
-                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">móveis entregues</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-5xl md:text-6xl font-serif text-silver-light mb-2">5 anos</p>
-                    <p class="text-sm uppercase tracking-widest font-light text-silver-dark">de garantia</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Catálogo (Vitrine) -->
-    <section id="catalogo" class="py-24 bg-sand-light text-fendi-deep">
-        <div class="max-w-7xl mx-auto px-6 md:px-8">
-            
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif text-fendi-deep mb-8">Peças da nossa oficina</h2>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-8">Catálogo da nossa oficina</h2>
 
                 <!-- Filters -->
                 <div class="flex flex-wrap justify-center gap-3">
-                    <button data-filter="all" class="filter-btn px-6 py-2 rounded-full border border-fendi-deep text-sand-light bg-fendi-deep font-medium text-sm transition-all tracking-wide">Todos</button>
-                    <button data-filter="sala" class="filter-btn px-6 py-2 rounded-full border border-fendi-base text-fendi-deep bg-transparent hover:border-fendi-deep hover:bg-fendi-deep/5 text-sm transition-all tracking-wide">Sala</button>
-                    <button data-filter="jantar" class="filter-btn px-6 py-2 rounded-full border border-fendi-base text-fendi-deep bg-transparent hover:border-fendi-deep hover:bg-fendi-deep/5 text-sm transition-all tracking-wide">Jantar</button>
-                    <button data-filter="quarto" class="filter-btn px-6 py-2 rounded-full border border-fendi-base text-fendi-deep bg-transparent hover:border-fendi-deep hover:bg-fendi-deep/5 text-sm transition-all tracking-wide">Quarto</button>
+                    <button data-filter="all" class="filter-btn px-6 py-2 rounded-full border border-silver-light text-coffee-dark bg-silver-light font-medium text-sm transition-all tracking-wide">Todos</button>
+                    <button data-filter="sala" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver-light bg-transparent hover:border-silver-light hover:text-white text-sm transition-all tracking-wide">Sala</button>
+                    <button data-filter="jantar" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver-light bg-transparent hover:border-silver-light hover:text-white text-sm transition-all tracking-wide">Jantar</button>
+                    <button data-filter="quarto" class="filter-btn px-6 py-2 rounded-full border border-silver-dark text-silver-light bg-transparent hover:border-silver-light hover:text-white text-sm transition-all tracking-wide">Quarto</button>
                 </div>
             </div>
 
             <!-- Products Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16" id="catalog-grid">
-                
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
                 <!-- Item 1 -->
-                <div class="product-card group" data-category="sala">
-                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-sand-DEFAULT rounded-sm">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Sofá Ipê" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                <div class="product-card group bg-coffee-light rounded-md overflow-hidden border border-coffee-border pb-6" data-category="sala">
+                    <div class="relative w-full aspect-square mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Sofá Ipê" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-2xl font-serif text-fendi-deep">Sofá Ipê</h3>
+                    <div class="px-6">
+                        <h3 class="text-2xl font-serif text-white mb-1">Sofá Ipê</h3>
+                        <p class="text-silver-dark font-light text-sm mb-6">Carvalho maciço · 210 x 90 cm</p>
+                        <button onclick="preencherMovel('Sofá Ipê')" class="w-full border border-silver-dark text-silver-light px-4 py-2 text-sm tracking-widest uppercase hover:bg-silver-light hover:text-coffee-dark transition-all duration-300 rounded-sm">
+                            Orçamento
+                        </button>
                     </div>
-                    <p class="text-fendi-deep/70 font-light text-sm mb-6">Carvalho maciço · 210 x 90 cm</p>
-                    <button onclick="preencherMovel('Sofá Ipê')" class="w-full border border-fendi-deep text-fendi-deep px-4 py-3 text-sm tracking-widest uppercase hover:bg-fendi-deep hover:text-sand-light transition-all duration-300">
-                        Orçamento
-                    </button>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="product-card group" data-category="jantar">
-                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-sand-DEFAULT rounded-sm">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop" alt="Mesa Jatobá" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                <div class="product-card group bg-coffee-light rounded-md overflow-hidden border border-coffee-border pb-6" data-category="jantar">
+                    <div class="relative w-full aspect-square mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop" alt="Mesa Jatobá" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-2xl font-serif text-fendi-deep">Mesa Jatobá</h3>
+                    <div class="px-6">
+                        <h3 class="text-2xl font-serif text-white mb-1">Mesa Jatobá</h3>
+                        <p class="text-silver-dark font-light text-sm mb-6">Carvalho maciço · 180 x 95 cm</p>
+                        <button onclick="preencherMovel('Mesa Jatobá')" class="w-full border border-silver-dark text-silver-light px-4 py-2 text-sm tracking-widest uppercase hover:bg-silver-light hover:text-coffee-dark transition-all duration-300 rounded-sm">
+                            Orçamento
+                        </button>
                     </div>
-                    <p class="text-fendi-deep/70 font-light text-sm mb-6">Carvalho maciço · 180 x 95 cm</p>
-                    <button onclick="preencherMovel('Mesa Jatobá')" class="w-full border border-fendi-deep text-fendi-deep px-4 py-3 text-sm tracking-widest uppercase hover:bg-fendi-deep hover:text-sand-light transition-all duration-300">
-                        Orçamento
-                    </button>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="product-card group" data-category="sala">
-                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-sand-DEFAULT rounded-sm">
-                        <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?q=80&w=1000&auto=format&fit=crop" alt="Poltrona Aroeira" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                <div class="product-card group bg-coffee-light rounded-md overflow-hidden border border-coffee-border pb-6" data-category="quarto">
+                    <div class="relative w-full aspect-square mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000&auto=format&fit=crop" alt="Cama Cedro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-2xl font-serif text-fendi-deep">Poltrona Aroeira</h3>
+                    <div class="px-6">
+                        <h3 class="text-2xl font-serif text-white mb-1">Cama Cedro</h3>
+                        <p class="text-silver-dark font-light text-sm mb-6">Cerejeira maciça · Casal Padrão</p>
+                        <button onclick="preencherMovel('Cama Cedro')" class="w-full border border-silver-dark text-silver-light px-4 py-2 text-sm tracking-widest uppercase hover:bg-silver-light hover:text-coffee-dark transition-all duration-300 rounded-sm">
+                            Orçamento
+                        </button>
                     </div>
-                    <p class="text-fendi-deep/70 font-light text-sm mb-6">Nogueira + linho · 72 x 80 cm</p>
-                    <button onclick="preencherMovel('Poltrona Aroeira')" class="w-full border border-fendi-deep text-fendi-deep px-4 py-3 text-sm tracking-widest uppercase hover:bg-fendi-deep hover:text-sand-light transition-all duration-300">
-                        Orçamento
-                    </button>
                 </div>
-                
-                <!-- Item 4 (Quarto) -->
-                <div class="product-card group" data-category="quarto">
-                    <div class="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-sand-DEFAULT rounded-sm">
-                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000&auto=format&fit=crop" alt="Cama Cedro" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                    </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-2xl font-serif text-fendi-deep">Cama Cedro</h3>
-                    </div>
-                    <p class="text-fendi-deep/70 font-light text-sm mb-6">Cerejeira maciça · Casal Padrão</p>
-                    <button onclick="preencherMovel('Cama Cedro')" class="w-full border border-fendi-deep text-fendi-deep px-4 py-3 text-sm tracking-widest uppercase hover:bg-fendi-deep hover:text-sand-light transition-all duration-300">
-                        Orçamento
-                    </button>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Formulário de Orçamento -->
-    <section id="orcamento" class="py-24 bg-fendi-deep">
-        <div class="max-w-4xl mx-auto px-6 md:px-8">
-            
-            <div class="text-center mb-16">
+    <!-- Formulário de Orçamento (Contrast Fix) -->
+    <section id="orcamento" class="py-24 bg-coffee-dark border-t border-coffee-border">
+        <div class="max-w-3xl mx-auto px-6 md:px-8">
+            <div class="text-center mb-12">
                 <p class="text-silver-dark text-xs uppercase tracking-[0.25em] font-medium mb-4">Orçamento sem compromisso</p>
-                <h2 class="text-4xl md:text-5xl font-serif text-silver-light mb-6">Conte o que você imagina.</h2>
-                <p class="text-sand-light/80 font-light text-lg">
-                    Preencha os dados e sua mensagem chega pronta no nosso WhatsApp. Respondemos em até 1 dia útil.
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Conte o que você imagina.</h2>
+                <p class="text-silver-DEFAULT font-light text-lg">
+                    Respondemos em até 1 dia útil.
                 </p>
             </div>
 
-            <div class="bg-sand-DEFAULT p-8 md:p-12 rounded-sm shadow-2xl text-fendi-deep">
-                <form id="formWhatsapp" class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <label for="nome" class="block text-xs uppercase tracking-widest text-fendi-deep/70 mb-2">Seu nome</label>
-                            <input type="text" id="nome" required placeholder="Ex: Maria Silva" class="w-full bg-transparent border-b border-fendi-base/40 text-fendi-deep placeholder-fendi-deep/40 py-3 focus:outline-none focus:border-fendi-deep transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="movel" class="block text-xs uppercase tracking-widest text-fendi-deep/70 mb-2">Qual móvel?</label>
-                            <input type="text" id="movel" required placeholder="Ex: mesa de jantar para 8 pessoas" class="w-full bg-transparent border-b border-fendi-base/40 text-fendi-deep placeholder-fendi-deep/40 py-3 focus:outline-none focus:border-fendi-deep transition-colors">
-                        </div>
+            <!-- Form Container with distinct background -->
+            <div class="bg-coffee-light border border-coffee-border p-8 md:p-10 rounded-md shadow-2xl">
+                <form id="formWhatsapp" class="space-y-6">
+                    <div>
+                        <label for="nome" class="block text-sm font-medium text-silver-light mb-2">Seu nome</label>
+                        <input type="text" id="nome" required placeholder="Ex: Maria Silva" class="w-full bg-coffee-dark border border-gray-500 text-white placeholder-gray-400 py-3 px-4 rounded-sm focus:outline-none focus:border-silver-light transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="movel" class="block text-sm font-medium text-silver-light mb-2">Qual móvel?</label>
+                        <input type="text" id="movel" required placeholder="Ex: Mesa de jantar para 8 pessoas" class="w-full bg-coffee-dark border border-gray-500 text-white placeholder-gray-400 py-3 px-4 rounded-sm focus:outline-none focus:border-silver-light transition-colors">
                     </div>
 
                     <div>
-                        <label for="medidas" class="block text-xs uppercase tracking-widest text-fendi-deep/70 mb-2">Medidas aproximadas</label>
-                        <input type="text" id="medidas" placeholder="Ex: 2,20 x 1,00 m" class="w-full bg-transparent border-b border-fendi-base/40 text-fendi-deep placeholder-fendi-deep/40 py-3 focus:outline-none focus:border-fendi-deep transition-colors">
+                        <label for="medidas" class="block text-sm font-medium text-silver-light mb-2">Medidas aproximadas</label>
+                        <input type="text" id="medidas" placeholder="Ex: 2,20 x 1,00 m" class="w-full bg-coffee-dark border border-gray-500 text-white placeholder-gray-400 py-3 px-4 rounded-sm focus:outline-none focus:border-silver-light transition-colors">
                     </div>
 
                     <div>
-                        <label for="detalhes" class="block text-xs uppercase tracking-widest text-fendi-deep/70 mb-2">Detalhes</label>
-                        <textarea id="detalhes" rows="3" placeholder="Madeira, cor, tecido, prazo..." class="w-full bg-transparent border-b border-fendi-base/40 text-fendi-deep placeholder-fendi-deep/40 py-3 focus:outline-none focus:border-fendi-deep transition-colors resize-none"></textarea>
+                        <label for="detalhes" class="block text-sm font-medium text-silver-light mb-2">Detalhes adicionais</label>
+                        <textarea id="detalhes" rows="4" placeholder="Madeira, cor, tecido, prazo..." class="w-full bg-coffee-dark border border-gray-500 text-white placeholder-gray-400 py-3 px-4 rounded-sm focus:outline-none focus:border-silver-light transition-colors resize-none"></textarea>
                     </div>
 
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-fendi-deep text-sand-light py-4 font-medium tracking-widest uppercase text-sm hover:bg-fendi-base transition-all flex justify-center items-center gap-3 rounded-sm">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Enviar pelo WhatsApp
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-silver-light text-coffee-dark py-4 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all flex justify-center items-center gap-3 rounded-sm">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Enviar pelo WhatsApp
                         </button>
                     </div>
                 </form>
             </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-fendi-deep text-silver-dark py-12 border-t border-fendi-base/30">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <p class="text-sm font-light">© 2026 Móveis Siqueira · Móveis de fabricação própria</p>
-            </div>
-            
-            <a href="#" class="flex items-center gap-2 text-silver-dark hover:text-sand-light transition-colors text-sm tracking-wide">
-                <i class="fa-brands fa-instagram text-lg"></i>
-                @moveissiqueira
+    <footer class="bg-[#1a100d] text-silver-dark py-10 border-t border-coffee-border">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm font-light text-center md:text-left">© 2026 Móveis Siqueira · Móveis de fabricação própria</p>
+            <a href="#" class="flex items-center gap-2 text-silver-dark hover:text-white transition-colors text-sm tracking-wide">
+                <i class="fa-brands fa-instagram text-lg"></i> @moveissiqueira
             </a>
         </div>
     </footer>
@@ -321,84 +259,54 @@
 
     <!-- Scripts -->
     <script>
-        // Efeito do Header no Scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-fendi-deep/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-fendi-base/30');
-                navbar.classList.remove('bg-transparent', 'py-4');
-                navbar.classList.add('py-2');
-            } else {
-                navbar.classList.remove('bg-fendi-deep/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-fendi-base/30', 'py-2');
-                navbar.classList.add('bg-transparent', 'py-4');
-            }
-        });
-
-        // Lógica de Filtros do Catálogo
+        // Filtro do Catálogo
         const filterButtons = document.querySelectorAll('.filter-btn');
         const productCards = document.querySelectorAll('.product-card');
 
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Resetar botões
+                // Remove estilos ativos de todos os botões
                 filterButtons.forEach(btn => {
-                    btn.classList.remove('bg-fendi-deep', 'text-sand-light', 'border-fendi-deep');
-                    btn.classList.add('bg-transparent', 'text-fendi-deep', 'border-fendi-base');
+                    btn.classList.remove('bg-silver-light', 'text-coffee-dark', 'border-silver-light');
+                    btn.classList.add('bg-transparent', 'text-silver-light', 'border-silver-dark');
                 });
 
-                // Ativar botão clicado
-                button.classList.add('bg-fendi-deep', 'text-sand-light', 'border-fendi-deep');
-                button.classList.remove('bg-transparent', 'text-fendi-deep', 'border-fendi-base');
+                // Adiciona estilos ativos ao botão clicado
+                button.classList.add('bg-silver-light', 'text-coffee-dark', 'border-silver-light');
+                button.classList.remove('bg-transparent', 'text-silver-light', 'border-silver-dark');
 
                 const filterValue = button.getAttribute('data-category');
 
-                // Filtrar itens
+                // Filtra os cards
                 productCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                         card.classList.remove('hide-item');
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 50);
+                        setTimeout(() => { card.style.opacity = '1'; }, 50);
                     } else {
                         card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.classList.add('hide-item');
-                        }, 300);
+                        setTimeout(() => { card.classList.add('hide-item'); }, 300);
                     }
                 });
             });
         });
 
-        // Preencher formulário e rolar a página
+        // Preenche o campo móvel e desce para o formulário
         function preencherMovel(nomeMovel) {
             const inputMovel = document.getElementById('movel');
             inputMovel.value = nomeMovel;
-            
             document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
-            
-            setTimeout(() => {
-                inputMovel.focus();
-                // Efeito visual no campo para chamar atenção
-                inputMovel.style.borderColor = '#423630';
-                inputMovel.style.backgroundColor = 'rgba(66, 54, 48, 0.05)';
-                setTimeout(() => {
-                    inputMovel.style.borderColor = '';
-                    inputMovel.style.backgroundColor = '';
-                }, 1000);
-            }, 800);
+            setTimeout(() => { inputMovel.focus(); }, 800);
         }
 
-        // Submissão do Formulário para WhatsApp
+        // Submissão WhatsApp
         document.getElementById('formWhatsapp').addEventListener('submit', function(e) {
             e.preventDefault(); 
-
             const nome = document.getElementById('nome').value.trim();
             const movel = document.getElementById('movel').value.trim();
             const medidas = document.getElementById('medidas').value.trim() || 'Não informadas';
             const detalhes = document.getElementById('detalhes').value.trim() || 'Sem detalhes adicionais';
 
-            const textoMensagem = `Olá, Móveis Siqueira! Meu nome é *${nome}*.\n\nGostaria de um orçamento para a seguinte peça:\n*${movel}*\n\n*Medidas:* ${medidas}\n*Detalhes adicionais:* ${detalhes}`;
-            
+            const textoMensagem = `Olá, Móveis Siqueira! Meu nome é *${nome}*.\n\nGostaria de um orçamento para:\n*${movel}*\n\n*Medidas:* ${medidas}\n*Detalhes:* ${detalhes}`;
             const numeroTelefone = '5511999999999';
             const linkWhatsapp = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(textoMensagem)}`;
             
