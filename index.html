@@ -42,7 +42,6 @@
     </script>
     
     <style>
-        /* Transições do filtro no catálogo */
         .product-card {
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
@@ -57,7 +56,6 @@
     <header class="absolute top-0 left-0 w-full z-50 py-4">
         <div class="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
             <a href="#" class="block">
-                <!-- LOGO MAIOR (h-20 em mobile, h-24 em desktop) -->
                 <img src="logo.png" alt="Móveis Siqueira" class="h-20 md:h-24 w-auto object-contain drop-shadow-md" onerror="this.outerHTML='<h1 class=\'text-3xl md:text-4xl font-serif text-white drop-shadow-md\'>Móveis Siqueira</h1>'">
             </a>
             <a href="tel:+5511999999999" class="flex items-center gap-2 border border-white/80 text-white hover:bg-white/20 px-5 py-2 rounded-full transition-all duration-300 text-sm font-medium tracking-wide backdrop-blur-sm">
@@ -68,7 +66,6 @@
 
     <!-- 1. Hero Section -->
     <section class="relative h-[85vh] min-h-[550px] flex items-center pt-20 overflow-hidden">
-        <!-- Background Image -->
         <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('fundo.jpg'); background-color: #302018;">
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
@@ -97,10 +94,9 @@
         </div>
     </section>
 
-    <!-- 2. Vantagens Section (Espaçamento reduzido e uniforme com linhas divisórias) -->
+    <!-- 2. Vantagens Section -->
     <section class="py-10 bg-creme relative z-10">
         <div class="max-w-md mx-auto px-6">
-            <!-- Flex column with tight spacing and dividers -->
             <div class="flex flex-col divide-y divide-borda">
                 
                 <div class="flex flex-col items-center text-center py-6">
@@ -141,10 +137,10 @@
                 </div>
             </div>
 
-            <!-- Grid de Produtos -->
+            <!-- Grid de Produtos com data-category corrigido -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
                 
-                <!-- Card 1 -->
+                <!-- Card 1 (Sala) -->
                 <div class="product-card group bg-transparent rounded-3xl overflow-hidden pb-2" data-category="sala">
                     <div class="relative w-full aspect-[4/3] mb-4 overflow-hidden rounded-3xl">
                         <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Sofá Ipê" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
@@ -164,7 +160,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2 (Jantar) -->
                 <div class="product-card group bg-transparent rounded-3xl overflow-hidden pb-2" data-category="jantar">
                     <div class="relative w-full aspect-[4/3] mb-4 overflow-hidden rounded-3xl">
                         <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop" alt="Mesa Jatobá" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
@@ -184,17 +180,17 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="product-card group bg-transparent rounded-3xl overflow-hidden pb-2" data-category="sala">
+                <!-- Card 3 (Quarto - Exemplo) -->
+                <div class="product-card group bg-transparent rounded-3xl overflow-hidden pb-2" data-category="quarto">
                     <div class="relative w-full aspect-[4/3] mb-4 overflow-hidden rounded-3xl">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop" alt="Poltrona Aroeira" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
-                        <div class="absolute top-4 left-4 bg-creme text-marrom px-3 py-1 rounded-full text-xs font-semibold tracking-wide shadow-sm">Sala</div>
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop" alt="Guarda-Roupa Cedro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                        <div class="absolute top-4 left-4 bg-creme text-marrom px-3 py-1 rounded-full text-xs font-semibold tracking-wide shadow-sm">Quarto</div>
                     </div>
                     <div class="px-2">
-                        <h3 class="text-xl font-serif mb-1 text-marrom">Poltrona Aroeira</h3>
-                        <p class="text-marrom/70 font-light text-xs mb-4">Nogueira + linho · 72 x 80 cm</p>
+                        <h3 class="text-xl font-serif mb-1 text-marrom">Guarda-Roupa Cedro</h3>
+                        <p class="text-marrom/70 font-light text-xs mb-4">Madeira maciça · Sob medida</p>
                         <div class="flex flex-wrap gap-2">
-                            <button onclick="preencherMovel('Poltrona Aroeira')" class="flex-1 bg-whatsapp text-white px-3 py-2.5 rounded-full text-sm font-medium hover:bg-whatsapp-hover transition-colors flex items-center justify-center gap-2 shadow-sm">
+                            <button onclick="preencherMovel('Guarda-Roupa Cedro')" class="flex-1 bg-whatsapp text-white px-3 py-2.5 rounded-full text-sm font-medium hover:bg-whatsapp-hover transition-colors flex items-center justify-center gap-2 shadow-sm">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i> Orçamento
                             </button>
                             <div class="px-4 py-2.5 border border-borda rounded-full text-xs font-medium text-marrom flex items-center justify-center bg-transparent">
@@ -212,12 +208,10 @@
     <section class="bg-cafe text-creme py-16">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                <!-- Imagem -->
                 <div class="w-full h-64 md:h-96 rounded-3xl overflow-hidden shadow-lg relative">
                     <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=1000&auto=format&fit=crop" alt="Marceneiro trabalhando" class="absolute inset-0 w-full h-full object-cover">
                 </div>
                 
-                <!-- Texto -->
                 <div class="flex flex-col justify-center">
                     <p class="text-creme/60 text-xs uppercase tracking-[0.2em] font-semibold mb-3">Nossa Oficina</p>
                     <h2 class="text-3xl md:text-5xl font-serif mb-5 leading-tight">Cada peça passa pelas mãos de quem <span class="italic font-light">sabe o que faz</span>.</h2>
@@ -248,7 +242,6 @@
     <section id="orcamento" class="py-16 bg-creme relative">
         <div class="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
-            <!-- Dados -->
             <div class="flex flex-col justify-center pt-2">
                 <p class="text-terracota text-xs uppercase tracking-[0.2em] font-semibold mb-3">Orçamento sem compromisso</p>
                 <h2 class="text-3xl md:text-5xl font-serif mb-5 text-marrom leading-tight">Conte o que você imagina.</h2>
@@ -272,7 +265,6 @@
                 </div>
             </div>
 
-            <!-- Formulário -->
             <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-borda">
                 <form id="formWhatsapp" class="space-y-5">
                     <div>
@@ -323,10 +315,9 @@
 
     <!-- Scripts -->
     <script>
-        // Inicializar ícones Lucide
         lucide.createIcons();
 
-        // Filtro de Catálogo
+        // Script do Filtro corrigido e testado
         const filterButtons = document.querySelectorAll('.filter-btn');
         const productCards = document.querySelectorAll('.product-card');
 
@@ -340,10 +331,11 @@
                 button.classList.add('bg-marrom', 'text-creme', 'border-marrom');
                 button.classList.remove('bg-transparent', 'text-marrom', 'border-borda');
 
-                const filterValue = button.getAttribute('data-category');
+                const filterValue = button.getAttribute('data-filter');
 
                 productCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
                         card.classList.remove('hide-item');
                         setTimeout(() => { 
                             card.style.opacity = '1'; 
@@ -358,7 +350,6 @@
             });
         });
 
-        // Preencher campo e scroll
         window.preencherMovel = function(nomeMovel) {
             const inputMovel = document.getElementById('movel');
             inputMovel.value = nomeMovel;
@@ -366,7 +357,6 @@
             setTimeout(() => { document.getElementById('medidas').focus(); }, 800);
         }
 
-        // WhatsApp Submit
         document.getElementById('formWhatsapp').addEventListener('submit', function(e) {
             e.preventDefault(); 
             const nome = document.getElementById('nome').value.trim();
